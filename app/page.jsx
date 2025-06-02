@@ -6,8 +6,9 @@ import { useEffect, useState } from 'react';
 import HeroSection from '@/components/HeroSection';
 import DepartmentAndTeamSection from '@/components/DepartmentAndTeamSection';
 import AnnouncementBanner from '@/components/AnnouncementBanner';
+import ThreeColumnInfoSection from '@/components/ThreeColumnInfoSection';
 export default function Home() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 1000);
@@ -29,6 +30,7 @@ export default function Home() {
             <HeroSection />
             <DepartmentAndTeamSection />
             <AnnouncementBanner />
+            <ThreeColumnInfoSection/>
           </>
         )}
     </>

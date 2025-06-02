@@ -75,7 +75,7 @@ export default function DepartmentAndTeamSection() {
                 {/* Left - Departments */}
                 <div>
                     <h2 className="text-2xl font-bold text-blue-600 mb-4">Our Departments</h2>
-                    <div className="bg-white rounded-2xl overflow-y-auto max-h-[340px] shadow-md border-l-4 border-orange-500 pr-2 custom-scroll">
+                    <div className="bg-white rounded-2xl overflow-y-auto max-h-[290px] shadow-md border-l-4 border-orange-500 pr-2 custom-scroll">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 p-4">
                             {departments.map((dept, idx) => (
                                 <div
@@ -91,7 +91,7 @@ export default function DepartmentAndTeamSection() {
                 </div>
 
                 {/* Right - Leadership Team */}
-                <div className="bg-[#f4f4f4] py-10 px-4">
+                <div className="bg-[#f4f4f4] py-0 px-4">
                     <h2 className="text-2xl font-bold text-blue-600 mb-4">Leadership Team</h2>
                     <div className="max-w-4xl mx-auto">
                         <Swiper

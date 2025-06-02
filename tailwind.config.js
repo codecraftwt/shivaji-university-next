@@ -6,14 +6,14 @@ module.exports = {
   ],
   theme: {
      extend: {
-      keyframes: {
-        scrollX: {
-          '0%, 100%': { transform: 'translateX(0%)' },
-          '50%': { transform: 'translateX(-50%)' },
-        },
-      },
       animation: {
-        'scroll-x': 'scrollX 20s ease-in-out infinite',
+        'scroll-up': 'scroll-up 10s linear infinite',
+      },
+      keyframes: {
+        'scroll-up': {
+          '0%': { transform: 'translateY(0%)' },
+          '100%': { transform: 'translateY(-50%)' },
+        },
       },
     },
   },

@@ -1,6 +1,7 @@
 import { Carousel } from 'react-responsive-carousel';
 import Image from 'next/image';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { motion } from "framer-motion";
 
 const HeroSection = () => {
     return (
@@ -13,6 +14,7 @@ const HeroSection = () => {
                     showStatus={false}
                     showArrows
                     dynamicHeight={false}
+                    showIndicators={false}
                 >
                     {/* Slide 1 */}
                     <div className="relative z-30">
@@ -70,27 +72,31 @@ const HeroSection = () => {
                 </Carousel>
 
                 {/* Icon Section */}
-                <div className="absolute  bottom-[-52px] left-1/2 transform -translate-x-1/2 w-full max-w-8xl px-4">
-                    <div className="flex overflow-x-auto space-x-4 scrollbar-hide justify-center p-3 z-40">
+                <div className="absolute  bottom-[-72px] left-1/2 transform -translate-x-1/2 w-full max-w-8xl px-4">
+                    <div className="flex overflow-x-auto space-x-4 scrollbar-hide justify-center p-3 z-40 pb-[40px]">
                         {[
                             { label: 'BBK KRC', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/books-stack-of-three.png' },
-                            { label: 'Affiliation', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/books-stack-of-three.png' },
-                            { label: 'Distance Education Online Programs', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/books-stack-of-three.png' },
-                            { label: 'Our Programs', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/books-stack-of-three.png' },
-                            { label: 'E-Suvidha', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/books-stack-of-three.png' },
-                            { label: 'Exam Section', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/books-stack-of-three.png' },
-                            { label: 'Online Receipt Portal', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/books-stack-of-three.png' },
-                            { label: 'Students Portal', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/books-stack-of-three.png' },
+                            { label: 'Affiliation', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/group.png' },
+                            { label: 'Distance Education Online Programs', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/man.png' },
+                            { label: 'Our Programs', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/paper.png' },
+                            { label: 'E-Suvidha', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/wireframe.png' },
+                            { label: 'Exam Section', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/exam.png' },
+                            { label: 'Online Receipt Portal', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/credit-card.png' },
+                            { label: 'Students Portal', icon: 'https://university.walstarfinance.com/wp-content/uploads/2024/10/group.png' },
                         ].map((item, idx) => (
-                            <div
+                             <motion.div
                                 key={idx}
-                                className="flex-shrink-0 w-[168px] bg-white rounded-2xl shadow-xl flex flex-col items-center p-4 transition hover:shadow-2xl"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.4, ease: "easeInOut", delay: idx * 0.1 }}
+                                viewport={{ once: true }}
+                                className="flex-shrink-0 w-[168px] bg-[#2097f4] rounded-2xl shadow-xl flex flex-col items-center p-4 transition hover:shadow-2xl"
                             >
                                 <div className="w-12 h-12 mb-2">
-                                    <img src={item.icon} alt={item.label} className="w-full h-full object-contain" />
+                                    <img src={item.icon} alt={item.label} className="w-full h-full object-contain filter brightness-0 invert" />
                                 </div>
-                                <p className="text-center text-sm font-semibold text-blue-600">{item.label}</p>
-                            </div>
+                                <p className="text-center text-sm font-semibold text-white  cursor-pointer hover:text-orange-500">{item.label}</p>
+                            </motion.div>
                         ))}
                     </div>
                 </div>
