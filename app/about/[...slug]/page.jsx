@@ -151,6 +151,8 @@ export async function generateMetadata({ params }) {
 
 
 export default async  function AboutPage({ params }) {
+    console.log(params?.slug,'params?.slug');
+    
     const slug = params?.slug?.[0];
 
     // Special case for Kolhapur

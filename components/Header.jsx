@@ -6,21 +6,37 @@ import { FaSearch } from 'react-icons/fa';
 export default function Header() {
   return (
     <header className="bg-white px-4 pt-4 pb-2 border-b border-blue-300">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4">
-        {/* Left: Shivaji University Logo */}
-        <div className="flex-shrink-0">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center lg:justify-between gap-4">
+        {/* Top: University Info */}
+        <div className="w-full flex flex-row sm:flex-row items-start sm:items-center gap-4">
+          {/* Logo */}
           <Image
-            src="https://www.unishivaji.ac.in/images/uni_logo.png"
+            src="https://university.walstarfinance.com/wp-content/uploads/2024/10/shivaji-university-2-min.png"
             alt="Shivaji University Logo"
-            width={500}
-            height={100}
-            className="h-auto max-w-full"
-            priority
+            width={70}
+            height={70}
+            className="object-contain"
           />
+
+          {/* Text Block */}
+          <div className="text-left">
+            <h1 className="text-blue-900 text-base sm:text-lg font-semibold leading-snug">
+              शिवाजी विद्यापीठ, कोल्हापूर
+            </h1>
+            <h2 className="text-blue-900 text-sm sm:text-base font-bold leading-tight">
+              SHIVAJI UNIVERSITY, KOLHAPUR
+            </h2>
+            <p className="text-gray-700 text-xs mt-1">
+              Estd-1962 – recognized by UGC U/s 2(f) and 12 (B)
+            </p>
+            <p className="text-blue-800 text-xs font-semibold">
+              NAAC “A++” Grade with CGPA 3.52
+            </p>
+          </div>
         </div>
 
-        {/* Center: Search Bar */}
-        <div className="w-full flex justify-center lg:justify-center">
+        {/* Search Bar */}
+        <div className="w-full sm:w-auto flex justify-center">
           <div className="flex items-center bg-[#f0f0f0] rounded-full overflow-hidden h-10 w-full max-w-md">
             <input
               type="text"
@@ -34,31 +50,16 @@ export default function Header() {
         </div>
 
         {/* Right: Certification Badges */}
-        <div className="hidden lg:flex items-center gap-6 flex-shrink-0">
-          <div className="flex items-center gap-4">
+        <div className="w-full lg:w-auto flex justify-center lg:justify-end">
+          <div className="hidden lg:flex items-center gap-4">
             <Image
               src="https://university.walstarfinance.com/wp-content/uploads/2024/10/iso-g20-1.png"
               alt="NAAC Badge"
-              width={300}
+              width={200}
               height={0}
-              className=" "
+              className="object-contain"
             />
-            {/* <div className="text-center text-xs text-[#002147] font-semibold">
-              With CGPA 3.52
-            </div> */}
           </div>
-          {/* <div className="flex items-center gap-4">
-            <Image
-              src="https://www.unishivaji.ac.in/uploads/iso-logo.png"
-              alt="ISO Certification"
-              width={80}
-              height={80}
-              className="h-16 w-auto"
-            />
-            <div className="text-center text-xs text-[#002147] font-semibold">
-              ISO 9001:2015 Certified<br />University
-            </div>
-          </div> */}
         </div>
       </div>
     </header>
